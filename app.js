@@ -16,7 +16,7 @@ app.use(cors());
  //view engine setup
  app.set('views', path.join(__dirname, 'views'));
  app.set('view engine', 'ejs');
-
+app.set('port', (process.env.PORT || 5000));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -45,6 +45,6 @@ app.use('/', users);
 //   res.render('error');
 // });
 
-app.listen(4000,()=>{
-	console.log('Server running on port 3000')
+app.listen(app.get('port'),()=>{
+	console.log('Server running on port 3000' + app.get('port'));
 })
