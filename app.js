@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var users = require('./routes/users');
 let cors = require('cors');
 let mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/workshop');
+mongoose.connect('mongodb://admin:admin@ds255258.mlab.com:55258/dlworkshop');
 
 var app = express();
 app.use(cors());
