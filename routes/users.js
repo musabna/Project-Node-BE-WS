@@ -134,6 +134,7 @@ router.post('/update', (req, res)=>{
 })
 
 router.post('/login', (req, res)=>{
+  console.log(req.body);
   user.findOne({email:req.body.email}, (err, data)=>{
     let compare = bcryptjs.compareSync(req.body.password, data.password);
     if(err) res.send({data:"Something went wrong while logging"});
