@@ -11,11 +11,14 @@ mongoose.connect('mongodb://admin:admin@ds255258.mlab.com:55258/dlworkshop');
 
 var app = express();
 // app.use(cors());
-app.use("*", function(req, res, next) {
-   res.setHeader('Access-Control-Allow-Origin', '*');
-   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
-   res.setHeader('Access-Control-Allow-Headers', 'accept, Content-Type, Authorization');
-});
+
+app.use(cors());
+app.options('*', cors());
+// app.use("*", function(req, res, next) {
+//    res.setHeader('Access-Control-Allow-Origin', '*');
+//    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+//    res.setHeader('Access-Control-Allow-Headers', 'accept, Content-Type, Authorization');
+// });
 
 // app.use(function(req, res, next) {
 //  res.header("Access-Control-Allow-Origin", "*");
