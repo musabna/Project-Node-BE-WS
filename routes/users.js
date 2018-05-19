@@ -34,7 +34,7 @@ router.post('/register', function(req, res, next) {
               console.log(err);
             }
             else{
-            var link="http://localhost:4200?id="+data.email;
+            var link="http://localhost:4200/setpassword?id="+data.email;
             const mailOptions = {
               from: '"Digital Lync" <development@digitallynctech.com>', // sender address
               to: data.email, // list of receivers 35.193.136.46
